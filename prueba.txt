@@ -1,0 +1,16 @@
+Para actualizar la base:
+
+en phpmyadmin importar la base que se envio via mail
+
+si da error añadir el campo unsigned al id de la tabla que da error EJ:  `id` int(10) unsigned NOT NULL y volver a importar
+para los migration borrar los registros de la tabla migrations excepto los dos primeros
+
+Ejecutar los comandos:
+php artisan migrate
+php artisan artisan db:seed
+
+si da error en el seed de tipo constraint en la tabla user:
+exportar la tabla user, editar el archivo borrando el constraint con error:
+  ADD CONSTRAINT `refEnteFK` FOREIGN KEY (`ente_id`) REFERENCES `ente` (`Ente_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+borrar la tabla user y volverla a crear usando el archivo editado

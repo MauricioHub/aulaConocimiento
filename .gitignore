@@ -1,0 +1,7 @@
+/vendor
+/node_modules
+/public/storage
+/public/Recursos
+Homestead.yaml
+Homestead.json
+/config/database.php
